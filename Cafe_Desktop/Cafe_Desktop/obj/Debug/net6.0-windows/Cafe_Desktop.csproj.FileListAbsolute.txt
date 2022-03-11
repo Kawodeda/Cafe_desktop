@@ -34,11 +34,9 @@ C:\Users\gr602_chuded\source\repos\Cafe_Desktop\Cafe_Desktop\bin\Debug\net6.0-wi
 C:\Users\gr602_chuded\source\repos\Cafe_Desktop\Cafe_Desktop\bin\Debug\net6.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\gr602_chuded\source\repos\Cafe_Desktop\Cafe_Desktop\bin\Debug\net6.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\gr602_chuded\source\repos\Cafe_Desktop\Cafe_Desktop\obj\Debug\net6.0-windows\Cafe_Desktop.csproj.AssemblyReference.cache
-C:\Users\gr602_chuded\source\repos\Cafe_Desktop\Cafe_Desktop\obj\Debug\net6.0-windows\MainWindow.g.cs
 C:\Users\gr602_chuded\source\repos\Cafe_Desktop\Cafe_Desktop\obj\Debug\net6.0-windows\App.g.cs
 C:\Users\gr602_chuded\source\repos\Cafe_Desktop\Cafe_Desktop\obj\Debug\net6.0-windows\Cafe_Desktop_MarkupCompile.cache
 C:\Users\gr602_chuded\source\repos\Cafe_Desktop\Cafe_Desktop\obj\Debug\net6.0-windows\Cafe_Desktop_MarkupCompile.lref
-C:\Users\gr602_chuded\source\repos\Cafe_Desktop\Cafe_Desktop\obj\Debug\net6.0-windows\MainWindow.baml
 C:\Users\gr602_chuded\source\repos\Cafe_Desktop\Cafe_Desktop\obj\Debug\net6.0-windows\Cafe_Desktop.g.resources
 C:\Users\gr602_chuded\source\repos\Cafe_Desktop\Cafe_Desktop\obj\Debug\net6.0-windows\Cafe_Desktop.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\gr602_chuded\source\repos\Cafe_Desktop\Cafe_Desktop\obj\Debug\net6.0-windows\Cafe_Desktop.AssemblyInfoInputs.cache
@@ -49,3 +47,6 @@ C:\Users\gr602_chuded\source\repos\Cafe_Desktop\Cafe_Desktop\obj\Debug\net6.0-wi
 C:\Users\gr602_chuded\source\repos\Cafe_Desktop\Cafe_Desktop\obj\Debug\net6.0-windows\ref\Cafe_Desktop.dll
 C:\Users\gr602_chuded\source\repos\Cafe_Desktop\Cafe_Desktop\obj\Debug\net6.0-windows\Cafe_Desktop.pdb
 C:\Users\gr602_chuded\source\repos\Cafe_Desktop\Cafe_Desktop\obj\Debug\net6.0-windows\Cafe_Desktop.genruntimeconfig.cache
+C:\Users\gr602_chuded\source\repos\Cafe_Desktop\Cafe_Desktop\obj\Debug\net6.0-windows\Views\AuthorizationWindow.g.cs
+C:\Users\gr602_chuded\source\repos\Cafe_Desktop\Cafe_Desktop\obj\Debug\net6.0-windows\Views\AuthorizationWindow.baml
+C:\Users\gr602_chuded\source\repos\Cafe_Desktop\Cafe_Desktop\obj\Debug\net6.0-windows\App.baml

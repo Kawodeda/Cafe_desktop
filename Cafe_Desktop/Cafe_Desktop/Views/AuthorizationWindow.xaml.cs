@@ -10,24 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-using Cafe_Desktop.Models;
-
-using Microsoft.EntityFrameworkCore;
-
-namespace Cafe_Desktop
+namespace Cafe_Desktop.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Логика взаимодействия для AuthorizationWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AuthorizationWindow : Window
     {
-        public MainWindow()
+        public AuthorizationWindow()
         {
             InitializeComponent();
-            var dishes = DbContextProvider.Context.Dish.Include(x => x.Reserve).ToList();
         }
     }
 }

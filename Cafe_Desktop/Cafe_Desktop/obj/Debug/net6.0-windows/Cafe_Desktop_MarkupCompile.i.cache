@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\gr602_chuded\source\repos\Cafe_Desktop\Cafe_Desktop\App.xaml
-11407045341
+11320172325
 
-141908653597
+17246762600
 214-2078200925
-MainWindow.xaml;
+Views\AuthorizationWindow.xaml;
 
-False
+True
 
