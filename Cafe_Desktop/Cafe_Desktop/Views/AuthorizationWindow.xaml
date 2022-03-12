@@ -13,6 +13,28 @@
     <Window.DataContext>
         <vm:AuthorizationVM/>
     </Window.DataContext>
+    <Window.Resources>
+        <Style TargetType="TextBlock"
+               BasedOn="{StaticResource TextBlockStyleBase}"
+               x:Key="LoginTextBlockStyle">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ElementName=LoginTextBox, Path=Text}" Value="">
+                    <Setter Property="Foreground" Value="Red"/>
+                </DataTrigger>
+            </Style.Triggers>
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+        <Style TargetType="TextBlock"
+               BasedOn="{StaticResource TextBlockStyleBase}"
+               x:Key="PasswordTextBlockStyle">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ElementName=MainPasswordBox, Path=Password}" Value="">
+                    <Setter Property="Foreground" Value="Red"/>
+                </DataTrigger>
+            </Style.Triggers>
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -37,10 +59,12 @@
                 HorizontalAlignment="Right">
                 <DockPanel>
                     <TextBlock 
+                        Style="{StaticResource LoginTextBlockStyle}"
                         Text="Логин:"
                         Margin="0, 0, 30, 0"
                         DockPanel.Dock="Left"/>
                     <TextBox
+                        Name="LoginTextBox"
                         Margin="0, 0, 0, 0"
                         DockPanel.Dock="Right"
                         Text="{Binding Username}">
@@ -51,10 +75,12 @@
                 Orientation="Horizontal">
                 <DockPanel>
                     <TextBlock 
+                        Style="{StaticResource PasswordTextBlockStyle}"
                         Text="Пароль:"
                         Margin="0, 0, 30, 0"
                         DockPanel.Dock="Left"/>
                     <PasswordBox
+                        Name="MainPasswordBox"
                         Margin="0, 0, 0, 0"
                         DockPanel.Dock="Right"/>
                 </DockPanel>
@@ -62,6 +88,8 @@
             <Button
                 Content="Войти"
                 Command="{Binding LoginCommand}"
+                CommandParameter="{Binding ElementName=MainPasswordBox}"
+                IsDefault="True"
                 Width="180"
                 Margin="90, 10, 0, 0"/>
         </StackPanel>

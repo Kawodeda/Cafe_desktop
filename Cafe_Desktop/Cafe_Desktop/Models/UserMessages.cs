@@ -13,8 +13,9 @@ namespace Cafe_Desktop.Models
         public static void ShowUnknownError()
         {
             string message = "Произошла непредвиденная ошибка";
+            string ukrMessage = "Все погано!";
 
-            ShowError(message, DefaultTitle);
+            ShowError(ukrMessage, DefaultTitle);
         }
 
         public static void ShowUserDoesNotExist(string username)
@@ -27,6 +28,13 @@ namespace Cafe_Desktop.Models
         public static void ShowIncorrectPassword()
         {
             string message = "Введен неверный пароль";
+
+            ShowExclamation(message, DefaultTitle);
+        }
+
+        public static void ShowBlankMandatoryField()
+        {
+            string message = "Не все обязательные поля заполнены";
 
             ShowExclamation(message, DefaultTitle);
         }
