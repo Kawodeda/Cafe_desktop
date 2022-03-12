@@ -34,6 +34,17 @@
                 </Style>
             </Style.Resources>
         </Style>
+        <Style TargetType="PasswordBox">
+            <Setter Property="FontFamily" Value="{StaticResource MainFont}"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Width" Value="180"/>
+            <Setter Property="Height" Value="32"/>
+            <Setter Property="Background" Value="{StaticResource EntryBackground}"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="IsInactiveSelectionHighlightEnabled" Value="False"/>
+            <Setter Property="Padding" Value="5, 2, 5, 2"/>
+        </Style>
         <Style TargetType="Button"
             x:Key="ButtonStyleBase">
             <Setter Property="Width" Value="150"/>
