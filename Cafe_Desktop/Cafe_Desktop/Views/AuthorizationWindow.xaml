@@ -8,33 +8,11 @@
         Title="Авторизация" 
         Height="480" 
         Width="750"
-        MinHeight="450"
+        MinHeight="460"
         MinWidth="550" Icon="/Resources/icon.ico">
     <Window.DataContext>
         <vm:AuthorizationVM/>
     </Window.DataContext>
-    <Window.Resources>
-        <Style TargetType="TextBlock"
-               BasedOn="{StaticResource TextBlockStyleBase}"
-               x:Key="LoginTextBlockStyle">
-            <Style.Triggers>
-                <DataTrigger Binding="{Binding ElementName=LoginTextBox, Path=Text}" Value="">
-                    <Setter Property="Foreground" Value="Red"/>
-                </DataTrigger>
-            </Style.Triggers>
-            <Setter Property="Foreground" Value="Black"/>
-        </Style>
-        <Style TargetType="TextBlock"
-               BasedOn="{StaticResource TextBlockStyleBase}"
-               x:Key="PasswordTextBlockStyle">
-            <Style.Triggers>
-                <DataTrigger Binding="{Binding ElementName=MainPasswordBox, Path=Password}" Value="">
-                    <Setter Property="Foreground" Value="Red"/>
-                </DataTrigger>
-            </Style.Triggers>
-            <Setter Property="Foreground" Value="Black"/>
-        </Style>
-    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -48,6 +26,11 @@
             Margin="0, 0, 0, 0"
             MinHeight="150"
             MaxHeight="180"/>
+        <TextBlock
+            Text="Введите логин и пароль"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Grid.Row="1"/>
         <StackPanel
             Grid.Row="1"
             Orientation="Vertical"
@@ -59,7 +42,6 @@
                 HorizontalAlignment="Right">
                 <DockPanel>
                     <TextBlock 
-                        Style="{StaticResource LoginTextBlockStyle}"
                         Text="Логин:"
                         Margin="0, 0, 30, 0"
                         DockPanel.Dock="Left"/>
@@ -75,7 +57,6 @@
                 Orientation="Horizontal">
                 <DockPanel>
                     <TextBlock 
-                        Style="{StaticResource PasswordTextBlockStyle}"
                         Text="Пароль:"
                         Margin="0, 0, 30, 0"
                         DockPanel.Dock="Left"/>
