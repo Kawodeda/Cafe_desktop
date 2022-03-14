@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Cafe_Desktop.Models;
+using Cafe_Desktop.Views;
 using System.Windows.Controls;
-
-using Microsoft.EntityFrameworkCore;
-
-using Cafe_Desktop.Models;
+using System.Windows.Media;
 
 namespace Cafe_Desktop.ViewModels
 {
@@ -41,8 +35,12 @@ namespace Cafe_Desktop.ViewModels
                             switch (Authorization.Login(_username, password))
                             {
                                 case AuthorizationStatus.Success:
-                                    Username = "";
-                                    passwordBox.Password = "";
+                                    switch(Authorization.CurrentUser?.PostId)
+                                    {
+                                        case 1:
+                                            new CookWindow().Show();
+                                            break;
+                                    }
                                     break;
                                 case AuthorizationStatus.UserDoesNotExist:
                                     UserMessages.ShowUserDoesNotExist(_username);

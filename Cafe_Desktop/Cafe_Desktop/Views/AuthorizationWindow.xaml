@@ -9,7 +9,9 @@
         Height="480" 
         Width="750"
         MinHeight="460"
-        MinWidth="550" Icon="/Resources/icon.ico">
+        MinWidth="550" 
+        Icon="/Resources/icon.ico"
+        Name="ThisWindow">
     <Window.DataContext>
         <vm:AuthorizationVM/>
     </Window.DataContext>

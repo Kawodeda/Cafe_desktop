@@ -11,7 +11,7 @@ namespace Cafe_Desktop.Models
     {
         private static User _currentUser;
         public static bool IsAuthorized { get; private set; }
-        public static User CurrentUser 
+        public static User? CurrentUser 
         { 
             get
             {
@@ -24,7 +24,7 @@ namespace Cafe_Desktop.Models
             try
             {
                 //User user = DbContextProvider.Context.User.Include(x => x.Post).ToList().Find(x => x.Login == username);
-                User user = new List<User>() { new User() { Login = "KawoDeda", Password = "12345" } }.Find(x => x.Login == username);
+                User user = new List<User>() { new User() { Login = "KawoDeda", Password = "12345", PostId = 1} }.Find(x => x.Login == username);
 
                 if (user == null)
                 {
