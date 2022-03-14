@@ -113,5 +113,11 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style TargetType="ListView">
+            <Setter Property="Background" Value="{StaticResource EntryBackground}"/>
+        </Style>
+        <Style TargetType="RadioButton">
+            <Setter Property="Height" Value="20"/>
+        </Style>
     </Application.Resources>
 </Application>
