@@ -102,3 +102,4 @@ D:\Cafe_desktop\Cafe_desktop\Cafe_Desktop\Cafe_Desktop\obj\Debug\net6.0-windows\
 D:\Cafe_desktop\Cafe_desktop\Cafe_Desktop\Cafe_Desktop\obj\Debug\net6.0-windows\Cafe_Desktop.pdb
 D:\Cafe_desktop\Cafe_desktop\Cafe_Desktop\Cafe_Desktop\obj\Debug\net6.0-windows\Cafe_Desktop.genruntimeconfig.cache
 D:\Cafe_desktop\Cafe_desktop\Cafe_Desktop\Cafe_Desktop\obj\Debug\net6.0-windows\ref\Cafe_Desktop.dll
+D:\Cafe_desktop\Cafe_desktop\Cafe_Desktop\Cafe_Desktop\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs

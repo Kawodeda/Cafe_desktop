@@ -3,13 +3,16 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Cafe_Desktop.Views"
+        xmlns:vm="clr-namespace:Cafe_Desktop.ViewModels"
         mc:Ignorable="d"
         Title="Авторизация" 
         Height="480" 
         Width="750"
-        MinHeight="450"
+        MinHeight="460"
         MinWidth="550" Icon="/Resources/icon.ico">
+    <Window.DataContext>
+        <vm:AuthorizationVM/>
+    </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -23,6 +26,11 @@
             Margin="0, 0, 0, 0"
             MinHeight="150"
             MaxHeight="180"/>
+        <TextBlock
+            Text="Введите логин и пароль"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Grid.Row="1"/>
         <StackPanel
             Grid.Row="1"
             Orientation="Vertical"
@@ -38,8 +46,10 @@
                         Margin="0, 0, 30, 0"
                         DockPanel.Dock="Left"/>
                     <TextBox
+                        Name="LoginTextBox"
                         Margin="0, 0, 0, 0"
-                        DockPanel.Dock="Right">
+                        DockPanel.Dock="Right"
+                        Text="{Binding Username}">
                     </TextBox>
                 </DockPanel>
             </StackPanel>
@@ -50,20 +60,24 @@
                         Text="Пароль:"
                         Margin="0, 0, 30, 0"
                         DockPanel.Dock="Left"/>
-                    <TextBox
+                    <PasswordBox
+                        Name="MainPasswordBox"
                         Margin="0, 0, 0, 0"
-                        DockPanel.Dock="Right">
-                    </TextBox>
+                        DockPanel.Dock="Right"/>
                 </DockPanel>
             </StackPanel>
             <Button
                 Content="Войти"
+                Command="{Binding LoginCommand}"
+                CommandParameter="{Binding ElementName=MainPasswordBox}"
+                IsDefault="True"
                 Width="180"
                 Margin="90, 10, 0, 0"/>
         </StackPanel>
         <Button
             Style="{StaticResource ExitButtonStyle}"
             Content="Выход"
+            Command="{Binding ExitCommand}"
             Grid.Row="1"
             HorizontalAlignment="Center"
             VerticalAlignment="Bottom"

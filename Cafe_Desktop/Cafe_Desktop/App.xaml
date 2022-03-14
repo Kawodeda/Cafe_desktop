@@ -14,9 +14,13 @@
         <Style TargetType="Image">
             <Setter Property="Stretch" Value="Uniform"/>
         </Style>
-        <Style TargetType="TextBlock">
+        <Style TargetType="TextBlock"
+               x:Key="TextBlockStyleBase">
             <Setter Property="FontFamily" Value="{StaticResource MainFont}"/>
             <Setter Property="FontSize" Value="24"/>
+        </Style>
+        <Style TargetType="TextBlock"
+               BasedOn="{StaticResource TextBlockStyleBase}">
         </Style>
         <Style TargetType="TextBox">
             <Setter Property="FontFamily" Value="{StaticResource MainFont}"/>
@@ -26,13 +30,38 @@
             <Setter Property="Background" Value="{StaticResource EntryBackground}"/>
             <Setter Property="BorderBrush" Value="Transparent"/>
             <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="IsInactiveSelectionHighlightEnabled" Value="False"/>
             <Setter Property="Padding" Value="5, 2, 5, 2"/>
             <Style.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="5"/>
                 </Style>
             </Style.Resources>
+        </Style>
+        <Style TargetType="PasswordBox">
+            <Setter Property="FontFamily" Value="{StaticResource MainFont}"/>
+            <Setter Property="FontSize" Value="28"/>
+            <Setter Property="PasswordChar" Value="*"/>
+            <Setter Property="Width" Value="180"/>
+            <Setter Property="Height" Value="32"/>
+            <Setter Property="Background" Value="{StaticResource EntryBackground}"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="5, 2, 5, 2"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="PasswordBox">
+                        <Border CornerRadius="5" x:Name="Bd" Background="{StaticResource EntryBackground}" BorderBrush="Transparent" BorderThickness="0" OpacityMask="{x:Null}">
+                            <ScrollViewer SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" x:Name="PART_ContentHost"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
         </Style>
         <Style TargetType="Button"
             x:Key="ButtonStyleBase">
