@@ -66,7 +66,8 @@ namespace Cafe_Desktop.ViewModels
                         }
 
                         string password = passwordBox.Password;
-                        return password != "" && _username != "";
+                        return string.IsNullOrEmpty(_username) == false 
+                            && string.IsNullOrEmpty(password) == false;
                     }));
             }
         }

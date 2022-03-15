@@ -13,10 +13,10 @@ namespace Cafe_Desktop.Models
         public DbSet<Dish> Dish { get; set; }
         public DbSet<Reserve> Reserve { get; set; }
         public DbSet<Place> Place { get; set; }
-        public DbSet<OrderStatus> OrderStatus { get; }
-        public DbSet<Order> Order { get; }
-        public DbSet<User> User { get; }
-        public DbSet<Post> Post { get; }
+        public DbSet<OrderStatus> OrderStatus { get; set; }
+        public DbSet<Order> Order { get; set; }
+        public DbSet<User> User { get; set; }
+        public DbSet<Post> Post { get; set; }
 
         public ApplicationContext()
         {

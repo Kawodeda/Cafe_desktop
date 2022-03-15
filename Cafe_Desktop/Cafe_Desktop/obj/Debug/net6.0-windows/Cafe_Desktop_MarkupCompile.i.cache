@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Cafe_desktop\Cafe_desktop\Cafe_Desktop\Cafe_Desktop\obj\Debug\net6.0-windows\
+Z:\Cafe_desktop_repo\Cafe_desktop\Cafe_Desktop\Cafe_Desktop\obj\Debug\net6.0-windows\
 Cafe_Desktop
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-D:\Cafe_desktop\Cafe_desktop\Cafe_Desktop\Cafe_Desktop\App.xaml
+Z:\Cafe_desktop_repo\Cafe_desktop\Cafe_Desktop\Cafe_Desktop\App.xaml
 21955711594
 
 271928386456
-214-768782873
+214-2078200925
 Views\AuthorizationWindow.xaml;Views\CookWindow.xaml;
 
-False
+True
 

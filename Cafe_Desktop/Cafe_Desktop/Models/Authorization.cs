@@ -20,11 +20,11 @@ namespace Cafe_Desktop.Models
         }
 
         public static AuthorizationStatus Login(string username, string password)
-        {
+        {           
             try
             {
-                //User user = DbContextProvider.Context.User.Include(x => x.Post).ToList().Find(x => x.Login == username);
-                User user = new List<User>() { new User() { Login = "KawoDeda", Password = "12345", PostId = 1} }.Find(x => x.Login == username);
+                User user = DbContextProvider.Context.User.Include(x => x.Post).ToList().Find(x => x.Login == username);
+                //User user = new List<User>() { new User() { Login = "KawoDeda", Password = "12345", PostId = 1} }.Find(x => x.Login == username);
 
                 if (user == null)
                 {

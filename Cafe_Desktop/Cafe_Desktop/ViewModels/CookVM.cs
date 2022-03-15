@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using Cafe_Desktop.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Cafe_Desktop.ViewModels
 {
@@ -16,6 +17,7 @@ namespace Cafe_Desktop.ViewModels
         private Order _selectedOrder;
         private ICookOrderVM _selectedOrderVM;
         private bool _statusChangingEnabled;
+        private RelayCommand _updateOrderCommand;
 
         public CookVM()
         {
@@ -55,6 +57,21 @@ namespace Cafe_Desktop.ViewModels
             }
         }
 
+        public RelayCommand UpdateOrderCommand
+        {
+            get
+            {
+                return _updateOrderCommand
+                    ?? (_updateOrderCommand = new RelayCommand((x) =>
+                    {
+                        
+                    }, (x) =>
+                    {
+                        return _selectedOrder != null;
+                    }));
+            }
+        }
+
         public string UserWelcome
         {
             get
@@ -65,49 +82,11 @@ namespace Cafe_Desktop.ViewModels
 
         private void LoadOrders()
         {
-            //_orders = new ObservableCollection<Order>(DbContextProvider.Context.Order);
-            _orders = new ObservableCollection<Order>() 
-            { 
-                new Order() 
-                { 
-                    Id = 1, 
-                    OrderStatusId = 1,
-                    OrderStatus = new OrderStatus() {Id = 1, Title = "принят"},
-                    Place = new Place() { Title = "Столик 4"},
-                    Reserve = new List<Reserve>() 
-                    { 
-                        new Reserve() {Dish = new Dish() { Title = "Йеаай"} },
-                        new Reserve() {Dish = new Dish() { Title = "Чай"} }
-                    }
-                },
-                new Order()
-                {
-                    Id = 2,
-                    OrderStatusId = 1,
-                    OrderStatus = new OrderStatus() {Id = 1, Title = "принят"},
-                    Place = new Place() { Title = "Столик 5"},
-                    Reserve = new List<Reserve>()
-                    {
-                        new Reserve() {Dish = new Dish() { Title = "упити (upiti)"} },
-                        new Reserve() {Dish = new Dish() { Title = "етите (etite)"} },
-                        new Reserve() {Dish = new Dish() { Title = "акоке (akoke)"} }
-                    }
-                },
-                new Order()
-                {
-                    Id = 2,
-                    OrderStatusId = 2,
-                    OrderStatus = new OrderStatus() {Id = 2, Title = "готовится"},
-                    Place = new Place() { Title = "Столик 1"},
-                    Reserve = new List<Reserve>()
-                    {
-                        new Reserve() {Dish = new Dish() { Title = "акоке (akoke)"} },
-                        new Reserve() {Dish = new Dish() { Title = "акоке (akoke)"} },
-                        new Reserve() {Dish = new Dish() { Title = "акоке (akoke)"} },
-                        new Reserve() {Dish = new Dish() { Title = "акоке (akoke)"} }
-                    }
-                }
-            };
+            _orders = new ObservableCollection<Order>(
+                DbContextProvider.Context.Order
+                    .Include(x => x.OrderStatus)
+                    .Include(x => x.Reserve)
+                    .ThenInclude(x => x.Dish));
         }
     }
 }
