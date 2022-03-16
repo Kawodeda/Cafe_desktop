@@ -136,25 +136,39 @@
                     Margin="10, 10, 0, 10"
             Orientation="Vertical">
                     <RadioButton
+                        Name="CookingRbtn"
                 Content="готовится"
                 GroupName="Status"
                 IsChecked="{Binding SelectedOrderVM.IsCooking}"
                 IsEnabled="{Binding StatusChangingEnabled}"
-                Padding="5, -13, 0, 0"/>
+                Padding="5, -13, 0, 0">
+                        <RadioButton.Tag>
+                            <vm:UpdateStatusInfo
+                                OrderStatusId="2"/>
+                        </RadioButton.Tag>
+                    </RadioButton>
                     <RadioButton
+                        Name="CookedRbtn"
                 Content="готов"
                 GroupName="Status"
                 IsChecked="{Binding SelectedOrderVM.IsCooked}"
                 IsEnabled="{Binding StatusChangingEnabled}"
                 Margin="0, 5, 0, 0"
-                Padding="5, -13, 0, 0"/>
+                Padding="5, -13, 0, 0">
+                        <RadioButton.Tag>
+                            <vm:UpdateStatusInfo
+                                OrderStatusId="3"/>
+                        </RadioButton.Tag>
+                    </RadioButton>
                     <Button
                         Content="Изменить"
                         Width="120"
-                        Margin="0, 10, 10, 0">
+                        Margin="0, 10, 10, 0"
+                        Command="{Binding UpdateOrderCommand}">
                         <Button.CommandParameter>
-                            <MultiBinding>
-                                
+                            <MultiBinding Converter="{StaticResource UpdateStatusConverter}">
+                                <Binding ElementName="CookingRbtn"/>
+                                <Binding ElementName="CookedRbtn"/>
                             </MultiBinding>
                         </Button.CommandParameter>
                     </Button>
