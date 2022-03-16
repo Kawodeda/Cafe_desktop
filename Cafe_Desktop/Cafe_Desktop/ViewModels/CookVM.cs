@@ -96,59 +96,59 @@ namespace Cafe_Desktop.ViewModels
         private void UpdateOrderStatus(Order order, UpdateStatusInfo updateStatusInfo)
         {
             order.OrderStatusId = updateStatusInfo.OrderStatusId;
-            //order.OrderStatus = DbContextProvider.Context.OrderStatus.Find(order.OrderStatusId);
-            //DbContextProvider.Context.SaveChanges();
+            order.OrderStatus = DbContextProvider.Context.OrderStatus.Find(order.OrderStatusId);
+            DbContextProvider.Context.SaveChanges();
         }
 
         private void LoadOrders()
         {
-            //_orders = new ObservableCollection<Order>(
-            //    DbContextProvider.Context.Order
-            //        .Include(x => x.OrderStatus)
-            //        .Include(x => x.Reserve)
-            //        .ThenInclude(x => x.Dish));
-            _orders = new ObservableCollection<Order>()
-            {
-                new Order()
-                {
-                    Id = 1,
-                    OrderStatusId = 1,
-                    OrderStatus = new OrderStatus() {Id = 1, Title = "принят"},
-                    Place = new Place() { Title = "Столик 4"},
-                    Reserve = new List<Reserve>()
-                    {
-                        new Reserve() {Dish = new Dish() { Title = "Йеаай"} },
-                        new Reserve() {Dish = new Dish() { Title = "Чай"} }
-                    }
-                },
-                new Order()
-                {
-                    Id = 2,
-                    OrderStatusId = 1,
-                    OrderStatus = new OrderStatus() {Id = 1, Title = "принят"},
-                    Place = new Place() { Title = "Столик 5"},
-                    Reserve = new List<Reserve>()
-                    {
-                        new Reserve() {Dish = new Dish() { Title = "упити (upiti)"} },
-                        new Reserve() {Dish = new Dish() { Title = "етите (etite)"} },
-                        new Reserve() {Dish = new Dish() { Title = "акоке (akoke)"} }
-                    }
-                },
-                new Order()
-                {
-                    Id = 2,
-                    OrderStatusId = 2,
-                    OrderStatus = new OrderStatus() {Id = 2, Title = "готовится"},
-                    Place = new Place() { Title = "Столик 1"},
-                    Reserve = new List<Reserve>()
-                    {
-                        new Reserve() {Dish = new Dish() { Title = "акоке (akoke)"} },
-                        new Reserve() {Dish = new Dish() { Title = "акоке (akoke)"} },
-                        new Reserve() {Dish = new Dish() { Title = "акоке (akoke)"} },
-                        new Reserve() {Dish = new Dish() { Title = "акоке (akoke)"} }
-                    }
-                }
-            };
+            _orders = new ObservableCollection<Order>(
+                DbContextProvider.Context.Order
+                    .Include(x => x.OrderStatus)
+                    .Include(x => x.Reserve)
+                    .ThenInclude(x => x.Dish));
+            //_orders = new ObservableCollection<Order>()
+            //{
+            //    new Order()
+            //    {
+            //        Id = 1,
+            //        OrderStatusId = 1,
+            //        OrderStatus = new OrderStatus() {Id = 1, Title = "принят"},
+            //        Place = new Place() { Title = "Столик 4"},
+            //        Reserve = new List<Reserve>()
+            //        {
+            //            new Reserve() {Dish = new Dish() { Title = "Йеаай"} },
+            //            new Reserve() {Dish = new Dish() { Title = "Чай"} }
+            //        }
+            //    },
+            //    new Order()
+            //    {
+            //        Id = 2,
+            //        OrderStatusId = 1,
+            //        OrderStatus = new OrderStatus() {Id = 1, Title = "принят"},
+            //        Place = new Place() { Title = "Столик 5"},
+            //        Reserve = new List<Reserve>()
+            //        {
+            //            new Reserve() {Dish = new Dish() { Title = "упити (upiti)"} },
+            //            new Reserve() {Dish = new Dish() { Title = "етите (etite)"} },
+            //            new Reserve() {Dish = new Dish() { Title = "акоке (akoke)"} }
+            //        }
+            //    },
+            //    new Order()
+            //    {
+            //        Id = 2,
+            //        OrderStatusId = 2,
+            //        OrderStatus = new OrderStatus() {Id = 2, Title = "готовится"},
+            //        Place = new Place() { Title = "Столик 1"},
+            //        Reserve = new List<Reserve>()
+            //        {
+            //            new Reserve() {Dish = new Dish() { Title = "акоке (akoke)"} },
+            //            new Reserve() {Dish = new Dish() { Title = "акоке (akoke)"} },
+            //            new Reserve() {Dish = new Dish() { Title = "акоке (akoke)"} },
+            //            new Reserve() {Dish = new Dish() { Title = "акоке (akoke)"} }
+            //        }
+            //    }
+            //};
         }
     }
 }

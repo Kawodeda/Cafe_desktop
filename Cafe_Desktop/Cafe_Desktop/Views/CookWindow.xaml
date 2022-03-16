@@ -8,6 +8,8 @@
         Title="Окно повара" 
         Height="450" 
         Width="800" 
+        MinHeight="400"
+        MinWidth="600"
         Icon="/Resources/icon.ico">
     <Window.DataContext>
         <vm:CookVM/>
@@ -79,7 +81,9 @@
             HeadersVisibility="None"
             FontFamily="{StaticResource MainFont}"
             FontSize="20"
-            RowDetailsVisibilityMode="VisibleWhenSelected">
+            RowDetailsVisibilityMode="VisibleWhenSelected"
+            VerticalGridLinesBrush="Transparent"
+            HorizontalGridLinesBrush="Transparent">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Created, StringFormat='{}{0:t}', ConverterCulture=ru-ru}" Width="100"/>
                 <DataGridTextColumn Binding="{Binding OrderStatus.Title, StringFormat='{}{0}'}" Width="*"/>
