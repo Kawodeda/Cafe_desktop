@@ -10,7 +10,9 @@
         Width="800" 
         MinHeight="400"
         MinWidth="600"
-        Icon="/Resources/icon.ico">
+        WindowStartupLocation="CenterScreen"
+        Icon="/Resources/icon.ico"
+        Name="ThisWindow">
     <Window.DataContext>
         <vm:CookVM/>
     </Window.DataContext>
@@ -47,8 +49,10 @@
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="108.503"/>
+            <ColumnDefinition Width="11.497"/>
+            <ColumnDefinition Width="130*"/>
+            <ColumnDefinition Width="367*"/>
             <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -57,23 +61,19 @@
         </Grid.RowDefinitions>
         <Image
             Source="/Resources/logo.png"
-            Grid.Column="0"
-            Grid.Row="0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Margin="5, 5, 5, 5"
-            Height="120"/>
+            VerticalAlignment="Center"
+            Height="120" Grid.ColumnSpan="2"/>
         <TextBlock
             Text="{Binding UserWelcome}"
-            Margin="10, 0, 0, 0"
-            Grid.Row="0"
-            Grid.Column="1"
-            Grid.ColumnSpan="2"
+            Margin="10,0,0,0"
+            Grid.Column="2"
+            Grid.ColumnSpan="3"
             VerticalAlignment="Center"/>
         <DataGrid
             Grid.Column="0"
             Grid.Row="1"
-            Grid.ColumnSpan="2"
+            Grid.ColumnSpan="4"
             Margin="10, 0, 10, 10"
             ItemsSource="{Binding Orders}"
             SelectedItem="{Binding SelectedOrder}"
@@ -125,7 +125,7 @@
             BorderBrush="{StaticResource BorderBrush}"
             BorderThickness="2"
             CornerRadius="5"
-            Grid.Column="2"
+            Grid.Column="4"
             Grid.Row="1"
             VerticalAlignment="Top"
             Margin="0, 0, 10, 0">
@@ -179,5 +179,16 @@
                 </StackPanel>
             </Grid>
         </Border>
+        <Button
+            Style="{StaticResource ExitButtonStyle}"
+            Content="Назад"
+            Command="{Binding BackCommand}"
+            CommandParameter="{Binding ElementName=ThisWindow}"
+            Grid.Row="1"
+            Grid.Column="4"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Bottom"
+            Margin="0, 0, 0, 15"
+            Width="120"/>
     </Grid>
 </Window>

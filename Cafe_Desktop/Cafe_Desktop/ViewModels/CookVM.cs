@@ -19,6 +19,7 @@ namespace Cafe_Desktop.ViewModels
         private ICookOrderVM _selectedOrderVM;
         private bool _statusChangingEnabled;
         private RelayCommand _updateOrderCommand;
+        private RelayCommand _backCommand;
 
         public CookVM()
         {
@@ -82,6 +83,14 @@ namespace Cafe_Desktop.ViewModels
                     {
                         return _selectedOrder != null;
                     }));
+            }
+        }
+
+        public RelayCommand BackCommand
+        {
+            get
+            {
+                return _backCommand ?? (_backCommand = new BackToLoginCommand());
             }
         }
 

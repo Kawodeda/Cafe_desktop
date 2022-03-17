@@ -14,6 +14,7 @@
         </FontFamily>
 
         <converters:UpdateStatusConverter x:Key="UpdateStatusConverter"/>
+        <converters:LoginParamsConverter x:Key="LoginParamsConverter"/>
 
         <Style TargetType="Image">
             <Setter Property="Stretch" Value="Uniform"/>

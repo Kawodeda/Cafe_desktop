@@ -11,6 +11,7 @@
         MinHeight="460"
         MinWidth="550" 
         Icon="/Resources/icon.ico"
+        WindowStartupLocation="CenterScreen"
         Name="ThisWindow">
     <Window.DataContext>
         <vm:AuthorizationVM/>
@@ -71,10 +72,16 @@
             <Button
                 Content="Войти"
                 Command="{Binding LoginCommand}"
-                CommandParameter="{Binding ElementName=MainPasswordBox}"
                 IsDefault="True"
                 Width="180"
-                Margin="90, 10, 0, 0"/>
+                Margin="90, 10, 0, 0">
+                <Button.CommandParameter>
+                    <MultiBinding Converter="{StaticResource LoginParamsConverter}">
+                        <Binding ElementName="MainPasswordBox"/>
+                        <Binding ElementName="ThisWindow"/>
+                    </MultiBinding>
+                </Button.CommandParameter>
+            </Button>
         </StackPanel>
         <Button
             Style="{StaticResource ExitButtonStyle}"

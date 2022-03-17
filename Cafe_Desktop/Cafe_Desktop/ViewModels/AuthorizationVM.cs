@@ -1,5 +1,6 @@
 ﻿using Cafe_Desktop.Models;
 using Cafe_Desktop.Views;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
@@ -28,17 +29,21 @@ namespace Cafe_Desktop.ViewModels
                 return _loginCommand ?? 
                     (_loginCommand = new RelayCommand((x) =>
                     {
-                        var passwordBox = x as PasswordBox;
-                        if (passwordBox != null)
+                        var parameter = x as LoginCommandParams;
+                        if (parameter != null)
                         {
+                            PasswordBox passwordBox = parameter.PasswordBox;
+                            Window window = parameter.Window;
+
                             string password = passwordBox.Password;
                             switch (Authorization.Login(_username, password))
                             {
                                 case AuthorizationStatus.Success:
-                                    switch(Authorization.CurrentUser?.PostId)
+                                    switch (Authorization.CurrentUser?.PostId)
                                     {
                                         case 1:
                                             new CookWindow().Show();
+                                            window.Close();
                                             break;
                                     }
                                     break;
@@ -52,6 +57,7 @@ namespace Cafe_Desktop.ViewModels
                                     UserMessages.ShowUnknownError();
                                     break;
                             }
+
                         }
                         else
                         {
@@ -59,11 +65,13 @@ namespace Cafe_Desktop.ViewModels
                         }
                     }, (x) =>
                     {
-                        var passwordBox = x as PasswordBox;
-                        if(passwordBox == null)
+                        var parameter = x as LoginCommandParams;
+                        if(parameter == null)
                         {
                             return false;
                         }
+
+                        PasswordBox passwordBox = parameter.PasswordBox;
 
                         string password = passwordBox.Password;
                         return string.IsNullOrEmpty(_username) == false 
@@ -77,10 +85,7 @@ namespace Cafe_Desktop.ViewModels
             get
             {
                 return _exitCommand ??
-                    (_exitCommand = new RelayCommand((x) =>
-                    {
-                        App.Current.Shutdown();
-                    }));
+                    (_exitCommand = new ExitCommand());
             }
         }
     }
