@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 Z:\Cafe_desktop_repo\Cafe_desktop\Cafe_Desktop\Cafe_Desktop\App.xaml
-21955711594
+4-1249192807
 
-31896340742
+351005931202
 214-2078200925
-Views\AuthorizationWindow.xaml;Views\CookWindow.xaml;
+Views\AddOrderWindow.xaml;Views\AuthorizationWindow.xaml;Views\CookWindow.xaml;Views\WaiterWindow.xaml;
 
 False
 

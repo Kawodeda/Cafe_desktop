@@ -160,3 +160,7 @@ Z:\Cafe_desktop_repo\Cafe_desktop\Cafe_Desktop\Cafe_Desktop\obj\Debug\net6.0-win
 Z:\Cafe_desktop_repo\Cafe_desktop\Cafe_Desktop\Cafe_Desktop\obj\Debug\net6.0-windows\ref\Cafe_Desktop.dll
 Z:\Cafe_desktop_repo\Cafe_desktop\Cafe_Desktop\Cafe_Desktop\obj\Debug\net6.0-windows\Cafe_Desktop.pdb
 Z:\Cafe_desktop_repo\Cafe_desktop\Cafe_Desktop\Cafe_Desktop\obj\Debug\net6.0-windows\Cafe_Desktop.genruntimeconfig.cache
+Z:\Cafe_desktop_repo\Cafe_desktop\Cafe_Desktop\Cafe_Desktop\obj\Debug\net6.0-windows\Views\WaiterWindow.g.cs
+Z:\Cafe_desktop_repo\Cafe_desktop\Cafe_Desktop\Cafe_Desktop\obj\Debug\net6.0-windows\Views\WaiterWindow.baml
+Z:\Cafe_desktop_repo\Cafe_desktop\Cafe_Desktop\Cafe_Desktop\obj\Debug\net6.0-windows\Views\AddOrderWindow.g.cs
+Z:\Cafe_desktop_repo\Cafe_desktop\Cafe_Desktop\Cafe_Desktop\obj\Debug\net6.0-windows\Views\AddOrderWindow.baml

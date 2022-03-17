@@ -7,10 +7,12 @@ using System.Threading.Tasks;
 
 namespace Cafe_Desktop.ViewModels
 {
-    internal class OrderVM : Notifier, ICookOrderVM
+    internal class OrderVM : Notifier, ICookOrderVM, IWaiterOrderVM
     {
         private bool _isCooking;
         private bool _isCooked;
+        private bool _isRecieved;
+        private bool _isPaid;
 
         public bool IsCooking
         {
@@ -32,21 +34,46 @@ namespace Cafe_Desktop.ViewModels
             }
         }
 
+        public bool IsRecieved
+        {
+            get => _isRecieved;
+            set
+            {
+                _isRecieved = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public bool IsPaid
+        {
+            get => _isPaid;
+            set
+            {
+                _isPaid = value;
+                RaisePropertyChanged();
+            }
+        }
+
         public void Update(Order? order)
         {
+            IsRecieved = false;
+            IsCooking = false;
+            IsCooked = false;
+            IsPaid = false;
+
             switch(order?.OrderStatusId)
             {
+                case 1:
+                    IsRecieved = true;
+                    break;
                 case 2:
                     IsCooking = true;
-                    IsCooked = false;
                     break;
                 case 3:
-                    IsCooking = false;
                     IsCooked = true;
                     break;
-                default:
-                    IsCooking = false;
-                    IsCooked = false;
+                case 4:
+                    IsPaid = true;
                     break;
             }
         }

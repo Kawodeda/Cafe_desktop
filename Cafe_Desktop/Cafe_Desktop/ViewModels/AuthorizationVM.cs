@@ -42,10 +42,13 @@ namespace Cafe_Desktop.ViewModels
                                     switch (Authorization.CurrentUser?.PostId)
                                     {
                                         case 1:
-                                            new CookWindow().Show();
-                                            window.Close();
+                                            new CookWindow().Show();                                            
+                                            break;
+                                        case 2:
+                                            new WaiterWindow().Show();
                                             break;
                                     }
+                                    window.Close();
                                     break;
                                 case AuthorizationStatus.UserDoesNotExist:
                                     UserMessages.ShowUserDoesNotExist(_username);
