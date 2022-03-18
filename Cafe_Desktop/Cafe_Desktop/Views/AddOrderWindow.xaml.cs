@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Cafe_Desktop.Models;
+using Cafe_Desktop.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,12 @@ namespace Cafe_Desktop.Views
     /// </summary>
     public partial class AddOrderWindow : Window
     {
-        public AddOrderWindow()
+        public AddOrderWindow(out Order order)
         {
             InitializeComponent();
+            var vm = new AddOrderVM();
+            DataContext = vm;
+            order = vm.Order;
         }
     }
 }

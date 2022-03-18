@@ -38,5 +38,12 @@ namespace Cafe_Desktop.Models
 
             ShowExclamation(message, DefaultTitle);
         }
+
+        public static void ShowOrderCreated()
+        {
+            string message = "Заказ успешно создан";
+
+            ShowInfo(message, DefaultTitle);
+        }
     }
 }

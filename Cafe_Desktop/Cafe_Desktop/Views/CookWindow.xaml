@@ -65,7 +65,7 @@
             VerticalAlignment="Center"
             Height="120" Grid.ColumnSpan="2"/>
         <TextBlock
-            Text="{Binding UserWelcome}"
+            Text="{Binding PersonalAreaVM.UserWelcome}"
             Margin="10,0,0,0"
             Grid.Column="2"
             Grid.ColumnSpan="3"
@@ -75,8 +75,8 @@
             Grid.Row="1"
             Grid.ColumnSpan="4"
             Margin="10, 0, 10, 10"
-            ItemsSource="{Binding Orders}"
-            SelectedItem="{Binding SelectedOrder}"
+            ItemsSource="{Binding RetrieveOrdersVM.Orders}"
+            SelectedItem="{Binding UpdateOrderVM.SelectedOrder}"
             RowBackground="{StaticResource EntryBackground}"
             HeadersVisibility="None"
             FontFamily="{StaticResource MainFont}"
@@ -143,8 +143,8 @@
                         Name="CookingRbtn"
                 Content="готовится"
                 GroupName="Status"
-                IsChecked="{Binding SelectedOrderVM.IsCooking}"
-                IsEnabled="{Binding StatusChangingEnabled}"
+                IsChecked="{Binding UpdateOrderVM.SelectedOrderVM.IsCooking}"
+                IsEnabled="{Binding UpdateOrderVM.StatusChangingEnabled}"
                 Padding="5, -13, 0, 0">
                         <RadioButton.Tag>
                             <vm:UpdateStatusInfo
@@ -155,8 +155,8 @@
                         Name="CookedRbtn"
                 Content="готов"
                 GroupName="Status"
-                IsChecked="{Binding SelectedOrderVM.IsCooked}"
-                IsEnabled="{Binding StatusChangingEnabled}"
+                IsChecked="{Binding UpdateOrderVM.SelectedOrderVM.IsCooked}"
+                IsEnabled="{Binding UpdateOrderVM.StatusChangingEnabled}"
                 Margin="0, 5, 0, 0"
                 Padding="5, -13, 0, 0">
                         <RadioButton.Tag>
@@ -168,7 +168,7 @@
                         Content="Изменить"
                         Width="120"
                         Margin="0, 10, 10, 0"
-                        Command="{Binding UpdateOrderCommand}">
+                        Command="{Binding UpdateOrderVM.UpdateOrderCommand}">
                         <Button.CommandParameter>
                             <MultiBinding Converter="{StaticResource UpdateStatusConverter}">
                                 <Binding ElementName="CookingRbtn"/>
